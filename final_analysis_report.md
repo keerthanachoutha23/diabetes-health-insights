@@ -34,12 +34,36 @@ The purpose of this analysis is to explore the relationships between various hea
 - **Smoking & Alcohol**: Heavy alcohol consumption was **not strongly correlated** with diabetes, while smoking showed **a weak correlation**.
 - **Fruit & Vegetable Intake**: Regular consumption was linked to a lower diabetes risk, though the correlation was not very strong.
 
-### **4. Key Findings & Recommendations**
+### **4. Machine Learning Analysis**
+
+To improve diabetes prediction, two machine learning models were applied: **Random Forest** and **XGBoost**.
+
+#### **4.1 Random Forest Model**
+- **Accuracy**: **79%**
+- **Key Findings**:
+  - Strong performance for **No Diabetes (0.0)** with **0.89 precision and 0.87 recall**.
+  - **Poor performance for Prediabetes (1.0)** (recall = 0.00, meaning it fails to identify prediabetes cases).
+  - **Moderate performance for Diabetes (2.0)** with **0.40 precision and 0.49 recall**.
+
+#### **4.2 XGBoost Model**
+- **Accuracy**: **83%** (better than Random Forest)
+- **Key Findings**:
+  - **Better recall for Diabetes (2.0) (0.28 vs. 0.49 in RF)**.
+  - **Still struggles with Prediabetes (1.0), recall = 0.00**.
+  - **Higher weighted precision (0.81) and recall (0.83)**, making it the preferred model.
+
+#### **4.3 Key Takeaways from Machine Learning**
+- **Random Forest performed well overall but struggled with minority classes**.
+- **XGBoost had better recall for diabetes but still struggled with prediabetes**.
+- **Further improvements** could include **hyperparameter tuning, feature selection, or using deep learning techniques**.
+
+### **5. Key Findings & Recommendations**
 1. **Age and BMI** are key risk factors for diabetes; preventive healthcare should focus on **early screening and interventions for overweight individuals.**
 2. **Physical inactivity and poor general health** are associated with higher diabetes prevalence, emphasizing the need for **public health campaigns on physical activity and nutrition**.
 3. **Lower-income individuals are more likely to develop diabetes**, highlighting the importance of **accessible healthcare and dietary education** for these groups.
 4. **Hypertension (HighBP) and HighCholesterol are major comorbidities**, reinforcing the need for **multi-faceted health interventions** targeting both diabetes and cardiovascular risk factors.
+5. **Machine Learning can be used for early detection of diabetes risk**, with XGBoost showing better predictive power than Random Forest.
 
-### **5. Conclusion**
+### **6. Conclusion**
 This analysis provides insights into the prevalence and risk factors of diabetes in the BRFSS dataset. Future research could involve **predictive modeling** using machine learning to identify high-risk individuals more accurately. Additionally, policy recommendations should aim at addressing **health disparities and promoting early preventive care**.
 
